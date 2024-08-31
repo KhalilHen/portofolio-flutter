@@ -57,10 +57,13 @@ TextButton(onPressed: null, child: Text('Contact', style: TextStyle(color: Color
         child: Container(
           width: double.infinity,
 
-          height: 200 * 2.0,
+          // height: 200 * 5.0,
+height: MediaQuery.of(context).size.height  * 2.0,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center, 
+            //think best space evenly then center,
+
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // crossAxisAlignment: CrossAxisAlignment., 
             children: [
               
 
@@ -108,47 +111,205 @@ Row(
 
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
   children: [
-ClipRRect(
-  child: Image(image: ('https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fletsenhance.io%2Fstatic%2F8f5e523ee6b2479e26ecc91b9c25261e%2F1015f%2FMainAfter.jpg&imgrefurl=https%3A%2F%2Fletsenhance.io%2F&docid=-t22bY2ix3gHaM&tbnid=tYmxDgFq4MrkJM&vet=12ahUKEwjWgJHMiZ-IAxXmi_0HHdxRNtIQM3oECB0QAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwjWgJHMiZ-IAxXmi_0HHdxRNtIQM3oECB0QAA'
-  
-  
-  
-  ), 
-  // borderRadius: BorderRadius.circular(100),
-  
-  
-  
-  
-  ),
+
+
+ ClipOval( 
+  //Later fix the image
+child: Image.asset('./images/boxing-day-celebration-with-gift.jpg',
+
+
+width: 100,
+height: 100,
+fit: BoxFit.cover,
 ),
 
-Text('Lorem ipsum dolor sit amet. Aut fuga sint non alias voluptatem sed quibusdam conse quatur aut quam dolores et quisquam vitae a  possimus maxime rem velit ducimus! Sed',
+ ),
 
 
 
-style: TextStyle(
 
-  fontSize: 20,
-  fontWeight: FontWeight.bold,
 
-  color: Colors.white,
-),
-),
+
+
+Expanded(
+                    child: Text(
+                      'Lorem ipsum dolor sit amet. Aut fuga sint non alias voluptatem sed quibusdam consequatur aut quam dolores et quisquam vitae a possimus maxime rem velit ducimus! Sed',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black, // Changed text color to black for better contrast
+                      ),
+                    ),
+                  ),
+
+
+
 
 Image(image: AssetImage('assets/images/IMG_20211010_123456.jpg'),),
 
 
   ],
+),
+
+
+
+
+//Experience row
+
+
+//Experience header
+Row(
+
+ mainAxisAlignment: MainAxisAlignment.center,
+children: [
+
+Text('Experience',
+               
+               style: TextStyle(
+                 fontSize: 20,
+                 fontWeight: FontWeight.bold,
+                 color: Colors.black ,
+               ),
+               ),
+
+],
+
+),
+
+
+Container(
+  width: 500,
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+  
+      Expanded(
+                      child: Text(
+                        'Lorem ipsum dolor sit amet. Aut fuga sint non alias voluptatem sed quibusdam consequatur aut quam dolores et quisquam vitae a possimus maxime rem velit ducimus! Sed',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black, // Changed text color to black for better contrast
+                        ),
+                      ),
+                    ),
+    ],
+  ),
+),
+
+
+
+Container(
+  width: 500,
+  child: Wrap(
+    
+    // mainAxisAlignment: MainAxisAlignment.center,
+    alignment: WrapAlignment.center,  
+
+    children:
+  
+  [
+  
+    Row(
+
+children: [
+
+//Here comes all the icon/logos
+
+Column(
+
+  children: [
+ Image(image: AssetImage("./images/react-2.svg"),
+  
+  ),
+Text('React'),
+
+  ],
+),
+ 
+
+
+],
+
+
+    )
+  ]
+  
+  
+  ),
+),
+
+
+
+//Here comes the projects.
+Column(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+
+
+Text('Projects', style: TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+),),
+              
+     
+
+
+
+//page break when adding this
+// Expanded(
+//                     child: Text(
+//                       'Lorem ipsum dolor sit amet. Aut fuga sint non alias voluptatem sed quibusdam uam vitae a possimus maxime rem velit ducimus! Sed',
+//                       style: TextStyle(
+//                         fontSize: 10,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.black, // Changed text color to black for better contrast
+//                       ),
+//                     ),
+//                   ),
+
+
+
+
+
+Row(
+
+  children: [
+//Here comes the filter options
+
+
+// FilterChip(label: label, onSelected: null),
+  ],
 )
-             
+
+
+  ],),
+
+     
+        Row(
+
+
+
+        ),
           
-          
+
                 
                 
             
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color:  Color(0xFF1A1A1A),
+                // backgroundColor: const
+shape: const CircularNotchedRectangle(
+
+
+  
+),
+    
       ),
     );
   }
